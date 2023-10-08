@@ -32,7 +32,7 @@ def hbnb_filters(the_id=None):
     states = dict([state.name, state] for state in state_objs)
     amens = storage.all('Amenity').values()
     places = storage.all('Place').values()
-    users = dict([user.id, "{user.first_name} {user.last_name}"]
+    users = dict([user.id, f"{user.first_name} {user.last_name}"]
                  for user in storage.all('User').values())
     cache_id = (str(uuid.uuid4()))
     return render_template('1-hbnb.html',
