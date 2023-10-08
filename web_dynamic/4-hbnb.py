@@ -17,7 +17,7 @@ host = '0.0.0.0'
 @app.teardown_appcontext
 def teardown_db(exception):
     """
-    after each request, this method calls .close() (i.e. .remove()) on
+    after each request, this method closes
     the current SQLAlchemy Session
     """
     storage.close()
